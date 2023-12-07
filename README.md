@@ -1,4 +1,4 @@
-# Cardio-sentinel-prognasticator
+
 Importing the dependencies
 import numpy as np
 import pandas as pd
@@ -98,7 +98,7 @@ print(X.shape, X_train.shape,X_test.shape)
 Model training
 Logistic Regression
 model = LogisticRegression()
-# training the LogisticRegression model with training data
+
 model.fit(X_train, Y_train)
 /usr/local/lib/python3.10/dist-packages/sklearn/linear_model/_logistic.py:458:
 ConvergenceWarning: failed to converge (status=1):
@@ -112,21 +112,20 @@ LogisticRegression())
 Model Evaluation
 Accuracy Score
 
-# Accuracy on training data
 X_train_prediction = model.predict(X_train)
 training_data_accuracy = accuracy_score(X_train_prediction, Y_train)
 print('Accuracy on Training data:', training_data_accuracy)
 Accuracy on Training data: 0.8524390243902439
-# Accuracy on test data
+
 X_test_prediction = model.predict(X_test)
 test_data_accuracy = accuracy_score(X_test_prediction, Y_test)
 print('Accuracy on Test data:', test_data_accuracy)
 Accuracy on Test data: 0.8048780487804879
 Building a predictive System
 input_data=(57,1,2,128,229,0,0,150,0,0.4,1,1,3)
-# change input data to a numpy array
+
 input_data_as_numpy_array = np.asarray(input_data)
-# reshape the numpy as we are predicting for only one instance
+
 input_data_reshaped = input_data_as_numpy_array.reshape(1,-1)
 prediction = model.predict(input_data_reshaped)
 print(prediction)
